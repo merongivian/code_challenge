@@ -1,5 +1,5 @@
 development: &default
-  adapter: mysql2
+  adapter: postgresql
   database: batthleship_development
   encoding: utf8
   min_messages: warning
@@ -12,6 +12,7 @@ test:
   database: batthleship_test
 
 production: &deploy
+  adapter: postgresql
   encoding: utf8
   min_messages: warning
   pool: <%= [Integer(ENV.fetch("MAX_THREADS", 5)), Integer(ENV.fetch("DB_POOL", 5))].max %>
