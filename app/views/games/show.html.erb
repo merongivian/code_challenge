@@ -1,0 +1,21 @@
+<h1>
+  Hits
+</h1>
+
+<% @game.cells.each_slice(10) do |row| %>
+  <% row.each do |cell| %>
+    <%= check_box_tag '', cell.id, cell.hitted, class: 'attack-cell', data: { path: cell_path(cell) } %>
+  <% end %>
+  </br>
+<% end %>
+
+<h1>
+  My ships
+</h1>
+
+<% @game.cells.each_slice(10) do |row| %>
+  <% row.each do |cell| %>
+    <%= check_box_tag '', cell.id, cell.has_ship, disabled: true %>
+  <% end %>
+  </br>
+<% end %>
